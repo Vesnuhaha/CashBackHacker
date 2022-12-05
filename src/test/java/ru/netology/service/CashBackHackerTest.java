@@ -1,20 +1,23 @@
 package ru.netology.service;
 
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.Assert.*;
 
-class CashBackHackerTest {
+
+public class CashBackHackerTest {
+
+    CashBackHacker service = new CashBackHacker();
 
     @Test
     public void shouldIfAmountUnderLimitBoundary() {
         CashBackHacker service = new CashBackHacker();
 
         int amount = 1200;
-        int expected = 800;
         int actual = service.remain(amount);
+        int expected = 800;
 
-        assertEquals(expected, actual);
+        assertEquals(actual, expected);
     }
 
     @Test
@@ -22,8 +25,8 @@ class CashBackHackerTest {
         CashBackHacker service = new CashBackHacker();
 
         int amount = 500;
-        int expected = 500;
         int actual = service.remain(amount);
+        int expected = 500;
 
         assertEquals(expected, actual);
     }
@@ -33,9 +36,10 @@ class CashBackHackerTest {
         CashBackHacker service = new CashBackHacker();
 
         int amount = 1000;
-        int expected = 1000;
         int actual = service.remain(amount);
+        int expected = 1000;
 
         assertEquals(expected, actual);
     }
+
 }
